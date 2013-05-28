@@ -3,7 +3,7 @@ package com.LPDW.morpion.Model;
 
 public class MorpionManager
 {
-    protected static Boolean statesTab[];
+    protected static Integer statesTab[];
 
     protected void CalculResult()
     {
