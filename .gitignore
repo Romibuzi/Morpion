@@ -16,7 +16,7 @@
 
 # generated files
 Morpion/build/
-.bin
+*.bin
 bin/
 gen/
 
