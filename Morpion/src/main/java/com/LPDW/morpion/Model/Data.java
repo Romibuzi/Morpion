@@ -8,7 +8,7 @@ public class Data
     String pseudo2;
     int scores[];
     MorpionManager virtualPlay[];
-    Boolean turn;
+    int turn;
 
     // Data Object
     private static Data INSTANCE = null;
@@ -63,12 +63,12 @@ public class Data
         this.virtualPlay = virtualPlay;
     }
 
-    public Boolean getTurn()
+    public int getTurn()
     {
         return turn;
     }
 
-    public void setTurn(Boolean turn)
+    public void setTurn(int turn)
     {
         this.turn = turn;
     }
@@ -76,8 +76,9 @@ public class Data
     // Private constructor
     private Data()
     {
-       //PlayerOne P1 = new PlayerOne();
-       //PlayerTwo P2 = new PlayerTwo();
+       // Instanciate the players
+       PlayerOne P1 = new PlayerOne();
+       PlayerTwo P2 = new PlayerTwo();
     }
 
     // Method which return the Data instance if it exists or new Data object if it doesn't exists
@@ -88,5 +89,7 @@ public class Data
         }
         return INSTANCE;
     }
+
+
 
 }
