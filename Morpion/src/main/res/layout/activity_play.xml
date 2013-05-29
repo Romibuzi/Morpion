@@ -5,4 +5,119 @@
               android:layout_width="match_parent"
               android:layout_height="match_parent">
 
+    <RelativeLayout
+            android:layout_width="250dp"
+            android:layout_height="250dp"
+            android:layout_gravity="center">
+
+        <ImageView
+                android:layout_width="2dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="82dp"
+                android:id="@+id/leftVerticalBar"
+                android:src="#000000"
+                android:clickable="false"/>
+
+        <ImageView
+                android:layout_width="2dp"
+                android:layout_height="match_parent"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="82dp"
+                android:id="@+id/rightVerticalBar"
+                android:src="#000000"
+                android:clickable="false"/>
+
+        <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_marginTop="82dp"
+                android:id="@+id/topHorizontalBar"
+                android:src="#000000"
+                android:clickable="false"/>
+
+        <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="82dp"
+                android:id="@+id/bottomHorizontalBar"
+                android:src="#000000"
+                android:clickable="false"/>
+
+        <ImageView
+                android:layout_width="82dp"
+                android:layout_height="82dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentLeft="true"
+                android:layout_above="@id/topHorizontalBar"
+                android:id="@+id/A-1"
+                android:src="#ff1122"/>
+
+        <ImageView
+                android:layout_width="82dp"
+                android:layout_height="82dp"
+                android:layout_centerInParent="true"
+                android:layout_alignParentTop="true"
+                android:layout_above="@id/topHorizontalBar"
+                android:id="@+id/B-1"
+                android:src="#ff1122"/>
+
+        <ImageView
+                android:layout_width="82dp"
+                android:layout_height="82dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentRight="true"
+                android:layout_above="@id/topHorizontalBar"
+                android:id="@+id/C-1"
+                android:src="#ff1122"/>
+
+        <ImageView
+                android:layout_width="82dp"
+                android:layout_height="82dp"
+                android:layout_above="@id/bottomHorizontalBar"
+                android:layout_alignParentLeft="true"
+                android:id="@+id/A-2"
+                android:src="#ff1122"/>
+
+        <ImageView
+                android:layout_width="82dp"
+                android:layout_height="82dp"
+                android:layout_centerInParent="true"
+                android:layout_above="@id/bottomHorizontalBar"
+                android:id="@+id/B-2"
+                android:src="#ff1122"/>
+
+        <ImageView
+                android:layout_width="82dp"
+                android:layout_height="82dp"
+                android:layout_alignParentRight="true"
+                android:layout_above="@id/bottomHorizontalBar"
+                android:id="@+id/C-2"
+                android:src="#ff1122"/>
+
+        <ImageView
+                android:layout_width="82dp"
+                android:layout_height="82dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentBottom="true"
+                android:id="@+id/A-3"
+                android:src="#ff1122"/>
+
+        <ImageView
+                android:layout_width="82dp"
+                android:layout_height="82dp"
+                android:layout_centerInParent="true"
+                android:layout_alignParentBottom="true"
+                android:id="@+id/B-3"
+                android:src="#ff1122"/>
+
+        <ImageView
+                android:layout_width="82dp"
+                android:layout_height="82dp"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentBottom="true"
+                android:id="@+id/C-3"
+                android:src="#ff1122"/>
+
+    </RelativeLayout>
 </LinearLayout>
