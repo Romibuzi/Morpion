@@ -50,6 +50,7 @@
                 android:layout_alignParentTop="true"
                 android:layout_alignParentLeft="true"
                 android:id="@+id/A1"
+                android:tag="A1"
                 android:src="#ff1122"
                 android:onClick="onThisBox"/>
 
@@ -59,6 +60,7 @@
                 android:layout_centerInParent="true"
                 android:layout_alignParentTop="true"
                 android:id="@+id/B1"
+                android:tag="B1"
                 android:src="#ff1122"
                 android:onClick="onThisBox"/>
 
@@ -68,6 +70,7 @@
                 android:layout_alignParentTop="true"
                 android:layout_alignParentRight="true"
                 android:id="@+id/C1"
+                android:tag="C1"
                 android:src="#ff1122"
                 android:onClick="onThisBox"/>
 
@@ -77,6 +80,7 @@
                 android:layout_above="@id/bottomHorizontalBar"
                 android:layout_alignParentLeft="true"
                 android:id="@+id/A2"
+                android:tag="A2"
                 android:src="#ff1122"
                 android:onClick="onThisBox"/>
 
@@ -86,6 +90,7 @@
                 android:layout_centerInParent="true"
                 android:layout_above="@id/bottomHorizontalBar"
                 android:id="@+id/B2"
+                android:tag="B2"
                 android:src="#ff1122"
                 android:onClick="onThisBox"/>
 
@@ -95,6 +100,7 @@
                 android:layout_alignParentRight="true"
                 android:layout_above="@id/bottomHorizontalBar"
                 android:id="@+id/C2"
+                android:tag="C2"
                 android:src="#ff1122"
                 android:onClick="onThisBox"/>
 
@@ -104,6 +110,7 @@
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentBottom="true"
                 android:id="@+id/A3"
+                android:tag="A3"
                 android:src="#ff1122"
                 android:onClick="onThisBox"/>
 
@@ -113,6 +120,7 @@
                 android:layout_centerInParent="true"
                 android:layout_alignParentBottom="true"
                 android:id="@+id/B3"
+                android:tag="B3"
                 android:src="#ff1122"
                 android:onClick="onThisBox"/>
 
@@ -122,6 +130,7 @@
                 android:layout_alignParentRight="true"
                 android:layout_alignParentBottom="true"
                 android:id="@+id/C3"
+                android:tag="C3"
                 android:src="#ff1122"
                 android:onClick="onThisBox"/>
 

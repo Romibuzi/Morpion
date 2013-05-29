@@ -5,6 +5,8 @@ import android.app.Activity;
 import android.util.Log;
 import android.view.Menu;
 
+import android.view.View;
+import android.widget.ImageView;
 import com.LPDW.morpion.Model.Data;
 
 public class PlayActivity extends Activity
@@ -32,4 +34,17 @@ public class PlayActivity extends Activity
         getMenuInflater().inflate(R.menu.main, menu);
         return true;
     }
+
+    /**
+     *
+     * Function called when a block of the Morpion is clicked
+     *
+     * @param v
+     */
+    public void onThisBox(View v)
+    {
+        Log.e("Msg", ""+v.getTag());
+
+    }
+
 }
