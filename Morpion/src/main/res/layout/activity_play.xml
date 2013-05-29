@@ -49,7 +49,6 @@
                 android:layout_height="82dp"
                 android:layout_alignParentTop="true"
                 android:layout_alignParentLeft="true"
-                android:layout_above="@id/topHorizontalBar"
                 android:id="@+id/A1"
                 android:src="#ff1122"/>
 
@@ -58,7 +57,6 @@
                 android:layout_height="82dp"
                 android:layout_centerInParent="true"
                 android:layout_alignParentTop="true"
-                android:layout_above="@id/topHorizontalBar"
                 android:id="@+id/B1"
                 android:src="#ff1122"/>
 
@@ -67,7 +65,6 @@
                 android:layout_height="82dp"
                 android:layout_alignParentTop="true"
                 android:layout_alignParentRight="true"
-                android:layout_above="@id/topHorizontalBar"
                 android:id="@+id/C1"
                 android:src="#ff1122"/>
 
