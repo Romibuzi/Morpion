@@ -10,6 +10,9 @@ public class Data
     MorpionManager virtualPlay[];
     Boolean turn;
 
+    // Data Object
+    private static Data INSTANCE = null;
+
     public int getNbPlayers()
     {
         return nbPlayers;
@@ -70,10 +73,20 @@ public class Data
         this.turn = turn;
     }
 
-    public static void main(String[] args)
+    // Private constructor
+    private Data()
     {
-       PlayerOne P1 = new PlayerOne();
-       PlayerTwo P2 = new PlayerTwo();
+       //PlayerOne P1 = new PlayerOne();
+       //PlayerTwo P2 = new PlayerTwo();
+    }
+
+    // Method which return the Data instance if it exists or new Data object if it doesn't exists
+    public static Data getInstance()
+    {
+        if (INSTANCE == null) {
+            INSTANCE = new Data();
+        }
+        return INSTANCE;
     }
 
 }

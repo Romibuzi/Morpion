@@ -2,7 +2,10 @@ package com.LPDW.morpion;
 
 import android.os.Bundle;
 import android.app.Activity;
+import android.util.Log;
 import android.view.Menu;
+
+import com.LPDW.morpion.Model.Data;
 
 public class PlayActivity extends Activity
 {
@@ -11,6 +14,14 @@ public class PlayActivity extends Activity
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_play);
+
+        // Recup infos of the Data object
+        Data data = Data.getInstance();
+        String pseudo1 = data.getPseudo1();
+        String pseudo2 = data.getPseudo2();
+
+        Log.v("pseudo1 :", pseudo1);
+        Log.v("pseudo2 :", pseudo2);
     }
 
 

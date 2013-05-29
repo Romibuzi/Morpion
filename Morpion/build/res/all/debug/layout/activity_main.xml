@@ -12,11 +12,20 @@
     <EditText
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/pseudoText"
-            android:text="pseudo"
+            android:id="@+id/pseudo1Text"
+            android:text="pseudo1"
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="21dp"/>
+
+    <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/pseudo2Text"
+            android:text="pseudo2"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="55dp"/>
 
     <Button
             android:layout_width="wrap_content"
