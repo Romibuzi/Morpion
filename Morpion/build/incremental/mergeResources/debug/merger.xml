@@ -104,6 +104,16 @@
                     <!-- API 14 theme customizations can go here. -->
                 </style>
             </file>
+            <file
+                name="activity_results"
+                path="/Users/ardietr/AndroidStudioProjects/Morpion/Morpion/src/main/res/layout/activity_results.xml"
+                qualifiers=""
+                type="layout" />
+            <file
+                name="activity_play"
+                path="/Users/ardietr/AndroidStudioProjects/Morpion/Morpion/src/main/res/layout/activity_play.xml"
+                qualifiers=""
+                type="layout" />
         </source>
         <source path="/Users/ardietr/AndroidStudioProjects/Morpion/Morpion/build/res/rs/debug" />
     </dataSet>
