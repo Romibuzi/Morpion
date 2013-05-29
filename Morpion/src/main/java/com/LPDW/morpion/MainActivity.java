@@ -33,6 +33,8 @@ public class MainActivity extends Activity
 
     /**
      * Function called when play button is clicked
+     *
+     * @param v
      */
     public void launchGame(View v)
     {
@@ -56,6 +58,8 @@ public class MainActivity extends Activity
                 Data data = Data.getInstance();
                 data.setPseudo1(pseudoOneValue);
                 data.setPseudo2(pseudoTwoValue);
+                // Set turn to play at player1
+                data.setTurn(1);
             } catch(Exception e) {
                 Log.v("ERREUR D\'INSTANCIATION", "exception", e);
             }
