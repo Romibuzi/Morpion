@@ -15,6 +15,7 @@
 *.class
 
 # generated files
+.gradle/
 Morpion/build/
 *.bin
 bin/
