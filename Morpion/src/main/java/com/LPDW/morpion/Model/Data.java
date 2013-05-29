@@ -4,6 +4,8 @@ package com.LPDW.morpion.Model;
 public class Data
 {
     int nbPlayers;
+    PlayerOne P1;
+    PlayerTwo P2;
     String pseudo1;
     String pseudo2;
     int scores[];
@@ -77,11 +79,13 @@ public class Data
     private Data()
     {
        // Instanciate the players
-       PlayerOne P1 = new PlayerOne();
-       PlayerTwo P2 = new PlayerTwo();
+       this.P1 = new PlayerOne();
+       this.P2 = new PlayerTwo();
     }
 
-    // Method which return the Data instance if it exists or new Data object if it doesn't exists
+    /**
+     * Method which return the Data instance if it exists or new Data object if it doesn't exists
+     */
     public static Data getInstance()
     {
         if (INSTANCE == null) {
@@ -90,6 +94,26 @@ public class Data
         return INSTANCE;
     }
 
+
+    /**
+     *
+     */
+    public void makeMove(int player, Character X, Character Y)
+    {
+
+
+
+        // TODO : MAKE THE GAME SYSTEM
+        if (player == 1) {
+            this.P1.Play(X, Y);
+            // set turn to Player 2
+            this.setTurn(2);
+        } else if (player == 2) {
+            this.P2.Play(X, Y);
+            // set turn to Player 1
+            this.setTurn(1);
+        }
+    }
 
 
 }

@@ -11,6 +11,8 @@ import com.LPDW.morpion.Model.Data;
 
 public class PlayActivity extends Activity
 {
+    Data data;
+
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
@@ -18,7 +20,7 @@ public class PlayActivity extends Activity
         setContentView(R.layout.activity_play);
 
         // Recup infos of the Data object
-        Data data = Data.getInstance();
+        this.data = Data.getInstance();
         String pseudo1 = data.getPseudo1();
         String pseudo2 = data.getPseudo2();
 
@@ -43,8 +45,11 @@ public class PlayActivity extends Activity
      */
     public void onThisBox(View v)
     {
-        Log.e("Msg", ""+v.getTag());
+        Character X = v.getTag().toString().charAt(0);
+        Character Y = v.getTag().toString().charAt(1);
+        int whichPlayer = data.getTurn();
 
+        data.makeMove(whichPlayer, X, Y);
     }
 
 }
