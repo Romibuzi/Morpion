@@ -51,7 +51,7 @@ public class MainActivity extends Activity
             //pseudoTwoValue.equalsIgnoreCase("pseudo2"
             pseudoOneValue.trim().length() == 0 ) {
 
-            Toast toast = Toast.makeText(this, "Veuillez rentrer des pseudos valide!", Toast.LENGTH_SHORT);
+            Toast toast = Toast.makeText(this, "Veuillez rentrer des pseudos valides!", Toast.LENGTH_SHORT);
             toast.show();
         } else {
             // Call the data object and pass the pseudo values into it
