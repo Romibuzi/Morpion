@@ -119,10 +119,10 @@ public class Data
                 return false;
             }
         } else if (player == 2) {
-            if(this.P2.Play(X, Y)) {
+            if (this.P2.Play(X, Y)) {
                 this.setScoresPlayer2(1);
                 return true;
-            }else{
+            } else {
                 // set turn to Player 1
                 this.setTurn(1);
                 return false;

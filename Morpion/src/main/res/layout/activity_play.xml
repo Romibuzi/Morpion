@@ -2,8 +2,13 @@
 
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
               android:orientation="vertical"
+
               android:layout_width="match_parent"
               android:layout_height="match_parent">
+
+    <com.LPDW.morpion.View.PlayView
+            android:layout_height="100dp"
+            android:layout_width="fill_parent"/>
 
     <RelativeLayout
             android:layout_width="250dp"
@@ -135,4 +140,5 @@
                 android:onClick="onThisBox"/>
 
     </RelativeLayout>
+
 </LinearLayout>
