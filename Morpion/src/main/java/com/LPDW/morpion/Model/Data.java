@@ -1,10 +1,5 @@
 package com.LPDW.morpion.Model;
 
-
-import android.util.Log;
-
-import java.util.Vector;
-
 public class Data
 {
     int nbPlayers;
@@ -13,8 +8,8 @@ public class Data
     MorpionManager MM;
     String pseudo1;
     String pseudo2;
-    int scores[];
-    MorpionManager virtualPlay[];
+    int scoresPlayer1;
+    int scoresPlayer2;
     int turn;
 
     // Data Object
@@ -50,24 +45,24 @@ public class Data
         this.pseudo2 = pseudo2;
     }
 
-    public int[] getScores()
+    public int getScoresPlayer2()
     {
-        return scores;
+        return scoresPlayer2;
     }
 
-    public void setScores(int[] scores)
+    public void setScoresPlayer2(int scoresPlayer2)
     {
-        this.scores = scores;
+        this.scoresPlayer2 += scoresPlayer2;
     }
 
-    public MorpionManager[] getVirtualPlay()
+    public int getScoresPlayer1()
     {
-        return virtualPlay;
+        return scoresPlayer1;
     }
 
-    public void setVirtualPlay(MorpionManager[] virtualPlay)
+    public void setScoresPlayer1(int scoresPlayer1)
     {
-        this.virtualPlay = virtualPlay;
+        this.scoresPlayer1 += scoresPlayer1;
     }
 
     public int getTurn()
@@ -109,13 +104,20 @@ public class Data
     {
         // TODO : MAKE THE GAME SYSTEM
         if (player == 1) {
-            this.P1.Play(X, Y);
-            // set turn to Player 2
-            this.setTurn(2);
+            // make the play for player one
+            if (this.P1.Play(X, Y)) {
+                this.setScoresPlayer1(1);
+            } else {
+                // set turn to Player 2
+                this.setTurn(2);
+            }
         } else if (player == 2) {
-            this.P2.Play(X, Y);
-            // set turn to Player 1
-            this.setTurn(1);
+            if(this.P2.Play(X, Y)) {
+                this.setScoresPlayer2(1);
+            }else{
+                // set turn to Player 1
+                this.setTurn(1);
+            }
         }
     }
 

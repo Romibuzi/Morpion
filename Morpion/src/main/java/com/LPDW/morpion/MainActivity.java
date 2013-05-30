@@ -57,6 +57,8 @@ public class MainActivity extends Activity
             // Call the data object and pass the pseudo values into it
             try {
                 Data data = Data.getInstance();
+                data.setScoresPlayer1(0);
+                data.setScoresPlayer2(0);
                 data.setPseudo1(pseudoOneValue);
                 data.setPseudo2(pseudoTwoValue);
                 // Set turn to play at player1
