@@ -20,7 +20,7 @@ public class PlayActivity extends Activity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_play);
 
-        // Recup infos of the Data object
+        // Get data of the Data object
         this.data = Data.getInstance();
         String pseudo1 = data.getPseudo1();
         String pseudo2 = data.getPseudo2();
@@ -28,6 +28,11 @@ public class PlayActivity extends Activity
         // Set turn to play at player1 & reset number of turn
         data.setTurn(1);
         data.setNbTurn(0);
+
+        data.resetPlayerTab();
+
+        // reset player winner
+        data.setplayerWinner(0);
 
         Log.v("pseudo1 :", pseudo1);
         Log.v("pseudo2 :", pseudo2);
@@ -63,24 +68,35 @@ public class PlayActivity extends Activity
         {
             // Stop the game & call third activity to display scores
             Log.v("win", "player"+whichPlayer+" has win");
-            // pass to the play activity
-            Intent intent = new Intent(this, ResultsActivity.class);
-            startActivity(intent);
-
+            // pass to the results activity
+            goToResultsActivity();
         }
         // else if the player has lose
         else{
-
             if(data.getNbTurn() == 9){
+                // Stop the game & call third activity to display "AUNCUN GAGNANT !"
                 Log.e("perdu", "partie terminée");
-                // pass to the play activity
-                Intent intent = new Intent(this, ResultsActivity.class);
-                startActivity(intent);
-            }else{
+                // pass to the results activity
+                goToResultsActivity();
+            }
+            else{
+                // TODO: changer l'image de la case
+
+                
+
+
+
+
+
 
             }
-
         }
+    }
+
+    private void goToResultsActivity(){
+        // pass to the results activity
+        Intent intent = new Intent(this, ResultsActivity.class);
+        startActivity(intent);
     }
 
 }

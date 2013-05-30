@@ -2,7 +2,7 @@ package com.LPDW.morpion.Model;
 
 public class Data
 {
-    int nbPlayers;
+    int playerWinner;
     PlayerOne P1;
     PlayerTwo P2;
     MorpionManager MM;
@@ -16,14 +16,14 @@ public class Data
     // Data Object
     private static Data INSTANCE = null;
 
-    public int getNbPlayers()
+    public int getplayerWinner()
     {
-        return nbPlayers;
+        return playerWinner;
     }
 
-    public void setNbPlayers(int nbPlayers)
+    public void setplayerWinner(int playerWinner)
     {
-        this.nbPlayers = nbPlayers;
+        this.playerWinner = playerWinner;
     }
 
     public String getPseudo1()
@@ -144,6 +144,14 @@ public class Data
             }
         }
         return false;
+    }
+
+    /**
+     * Function to reset TabPlayer
+     */
+    public void resetPlayerTab()
+    {
+        this.MM.resetPlayerTab();
     }
 
 

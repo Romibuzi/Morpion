@@ -64,13 +64,15 @@ public class MainActivity extends Activity
                 data.setPseudo1(pseudoOneValue);
                 data.setPseudo2(pseudoTwoValue);
 
+                // pass to the play activity
+                Intent intent = new Intent(this, PlayActivity.class);
+                startActivity(intent);
+
             } catch(Exception e) {
                 Log.v("ERREUR D\'INSTANCIATION", "exception", e);
             }
 
-            // pass to the play activity
-            Intent intent = new Intent(this, PlayActivity.class);
-            startActivity(intent);
+
         }
 
     }
