@@ -5,12 +5,7 @@ import android.util.Log;
 
 public class PlayerTwo extends MorpionManager
 {
-
     int markPlayer2 = 2;
-
-    protected void CalculResult()
-    {
-    }
 
     protected boolean Play(int X, int Y)
     {
@@ -40,6 +35,15 @@ public class PlayerTwo extends MorpionManager
                 return true;
             }
         }
+
+        // check two diagonals
+        if (TabPlayer[0][0] == TabPlayer[1][1] && TabPlayer[1][1] == TabPlayer[2][2] && TabPlayer[0][0] == markPlayer2) {
+            return true;
+        }
+        if (TabPlayer[2][0] == TabPlayer[1][1] && TabPlayer[1][1] == TabPlayer[1][2] && TabPlayer[2][0] == markPlayer2) {
+            return true;
+        }
+
         return false;
     }
 }

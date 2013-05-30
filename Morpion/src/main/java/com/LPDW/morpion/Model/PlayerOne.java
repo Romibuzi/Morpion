@@ -7,10 +7,6 @@ public class PlayerOne extends MorpionManager
 {
     int markPlayer1 = 1;
 
-    protected void CalculResult()
-    {
-    }
-
     protected boolean Play(int X, int Y)
     {
         // check if empty case
@@ -32,13 +28,22 @@ public class PlayerOne extends MorpionManager
     protected boolean checkWin()
     {
         for(int i = 0; i < 3; i++) {
-            if(TabPlayer[i][0] == TabPlayer[i][1] && TabPlayer[i][0] == TabPlayer[i][2] && TabPlayer[i][0] == 1) {
+            if(TabPlayer[i][0] == TabPlayer[i][1] && TabPlayer[i][0] == TabPlayer[i][2] && TabPlayer[i][0] == markPlayer1) {
                 return true;
             }
-            if(TabPlayer[0][i] == TabPlayer[1][i] && TabPlayer[0][i] == TabPlayer[2][i] && TabPlayer[0][i] == 1) {
+            if(TabPlayer[0][i] == TabPlayer[1][i] && TabPlayer[0][i] == TabPlayer[2][i] && TabPlayer[0][i] == markPlayer1) {
                 return true;
             }
         }
+
+        // check two diagonals
+        if (TabPlayer[0][0] == TabPlayer[1][1] && TabPlayer[1][1] == TabPlayer[2][2] && TabPlayer[0][0] == markPlayer1) {
+            return true;
+        }
+        if (TabPlayer[2][0] == TabPlayer[1][1] && TabPlayer[1][1] == TabPlayer[1][2] && TabPlayer[2][0] == markPlayer1) {
+            return true;
+        }
+
         return false;
     }
 }
