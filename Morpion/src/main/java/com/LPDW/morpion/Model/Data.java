@@ -11,6 +11,7 @@ public class Data
     int scoresPlayer1;
     int scoresPlayer2;
     int turn;
+    int nbTurn;
 
     // Data Object
     private static Data INSTANCE = null;
@@ -75,18 +76,30 @@ public class Data
         this.turn = turn;
     }
 
-    // Private constructor
+    public int getNbTurn() {
+        return nbTurn;
+    }
+
+    public void setNbTurn(int nbTurn) {
+        this.nbTurn += nbTurn;
+    }
+
+
+    /**
+     * Private Constructor (singleton)
+     */
     private Data()
     {
-       // Instanciate the Morpion Manager and the players
+       // Instanciate the Morpion Manager and the Players
        this.MM = new MorpionManager();
-
        this.P1 = new PlayerOne();
        this.P2 = new PlayerTwo();
     }
 
     /**
-     * Method which return the Data instance if it exists or new Data object if it doesn't exists
+     * Function which return the Data instance if it exists or new Data object if it doesn't exists (singleton)
+     *
+     * @return INSTANCE
      */
     public static Data getInstance()
     {
@@ -98,7 +111,7 @@ public class Data
 
 
     /**
-     * Call the different players, then make them play and check if they have win
+     * Function which call the different players, then make them play and check if they have win
      *
      * @param player
      * @param X
@@ -108,6 +121,8 @@ public class Data
      */
     public boolean makeMove(int player, int X, int Y)
     {
+        this.setNbTurn(1);
+
         if (player == 1) {
             // make the play for player one, if he make a win move => return result
             if (this.P1.Play(X, Y)) {

@@ -5,17 +5,25 @@ import android.util.Log;
 
 public class PlayerTwo extends MorpionManager
 {
+    // Properties
     int markPlayer2 = 2;
 
+    /**
+     * Function to check if the box was checked
+     *
+     * @param X : row
+     * @param Y : column
+     *
+     * @return bool
+     */
     protected boolean Play(int X, int Y)
     {
         // check if empty case
         if (TabPlayer[X][Y] == 0) {
             TabPlayer[X][Y] = markPlayer2;
-            Log.e("case coché", ""+TabPlayer[X][Y]);
-            // TODO : CHECK WIN
+            Log.e("case coché", ""+X+Y+" =>"+TabPlayer[X][Y]);
+            // check if the player has win
             if (checkWin()) {
-                Log.v("win", "player one has win");
                 return true;
             }
         } else if(TabPlayer[X][Y] != 0) {
@@ -25,8 +33,14 @@ public class PlayerTwo extends MorpionManager
         return false;
     }
 
+    /**
+     * Function to check if the player 2 has win
+     *
+     * @return bool
+     */
     protected boolean checkWin()
     {
+        // check row & columns
         for(int i = 0; i < 3; i++) {
             if(TabPlayer[i][0] == TabPlayer[i][1] && TabPlayer[i][0] == TabPlayer[i][2] && TabPlayer[i][0] == markPlayer2) {
                 return true;
