@@ -14,7 +14,7 @@ public class PlayView extends View
         super(context);
     }
 
-    public void changeImageCase(ImageView image, int Marker)
+    public static void changeImageCase(ImageView image, int Marker)
     {
         if (Marker == 1) {
             image.setImageResource(R.drawable.croix);

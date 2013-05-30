@@ -9,6 +9,7 @@ import android.view.Menu;
 import android.view.View;
 import android.widget.ImageView;
 import com.LPDW.morpion.Model.Data;
+import com.LPDW.morpion.View.PlayView;
 
 public class PlayActivity extends Activity
 {
@@ -29,8 +30,6 @@ public class PlayActivity extends Activity
         data.setTurn(1);
         data.setNbTurn(0);
 
-        data.resetPlayerTab();
-
         // reset player winner
         data.setplayerWinner(0);
 
@@ -38,6 +37,17 @@ public class PlayActivity extends Activity
         Log.v("pseudo2 :", pseudo2);
     }
 
+
+    @Override
+    protected void onResume()
+    {
+        super.onResume();
+        Log.e("onResume", "onResume motherfucker");
+
+        // Get data of the Data object
+        this.data = Data.getInstance();
+        data.resetPlayerTab();
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu)
@@ -82,11 +92,9 @@ public class PlayActivity extends Activity
             else{
                 // TODO: changer l'image de la case
 
-                
+                ImageView thisImg  = (ImageView)findViewById(v.getId());
 
-
-
-
+                PlayView.changeImageCase(thisImg, whichPlayer);
 
 
             }

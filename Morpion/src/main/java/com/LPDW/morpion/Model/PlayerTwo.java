@@ -54,7 +54,7 @@ public class PlayerTwo extends MorpionManager
         if (TabPlayer[0][0] == TabPlayer[1][1] && TabPlayer[1][1] == TabPlayer[2][2] && TabPlayer[0][0] == markPlayer2) {
             return true;
         }
-        if (TabPlayer[2][0] == TabPlayer[1][1] && TabPlayer[1][1] == TabPlayer[1][2] && TabPlayer[2][0] == markPlayer2) {
+        if (TabPlayer[2][0] == TabPlayer[1][1] && TabPlayer[1][1] == TabPlayer[0][2] && TabPlayer[2][0] == markPlayer2) {
             return true;
         }
 
