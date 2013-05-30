@@ -1,35 +1,30 @@
 package com.LPDW.morpion.Model;
 
+import android.util.Log;
+
+import java.util.Vector;
 
 public class MorpionManager
 {
+    protected int[][] TabPlayer;
 
-
-    static int[][] TabPlayer;
-
-
-    int getX()
+    public MorpionManager()
     {
-        return TabPlayer[3][1];
+        createTabPlayer();
 
+        Log.v("constructor", "rentre dans le constructeur");
     }
 
-    void MorpionManager()
+    private void createTabPlayer()
     {
-        TabPlayer = new int[3][];
-        for (int i=0 ; i<TabPlayer.length; i++)
-        {
-            TabPlayer[i]=new int[3];
-
-            TabPlayer[i][1] = i;
+        Log.v("methode", "rentre dans la methode");
+        TabPlayer = new int[3][3];
+        for (int i =0; i<3; i++) {
+            for (int j=0; j<3; j++) {
+                TabPlayer[i][j] = 0;
+            }
         }
-
-
-
-        int[][] matrice=new int[5][];
-        for (int i=0 ; i<matrice.length; i++)
-            matrice[i]=new int[6];
-}
+    }
 
     protected void CalculResult()
     {

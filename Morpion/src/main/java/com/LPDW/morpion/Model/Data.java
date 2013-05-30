@@ -1,11 +1,16 @@
 package com.LPDW.morpion.Model;
 
 
+import android.util.Log;
+
+import java.util.Vector;
+
 public class Data
 {
     int nbPlayers;
     PlayerOne P1;
     PlayerTwo P2;
+    MorpionManager MM;
     String pseudo1;
     String pseudo2;
     int scores[];
@@ -78,7 +83,9 @@ public class Data
     // Private constructor
     private Data()
     {
-       // Instanciate the players
+       // Instanciate the Morpion Manager and the players
+       this.MM = new MorpionManager();
+
        this.P1 = new PlayerOne();
        this.P2 = new PlayerTwo();
     }
@@ -98,11 +105,8 @@ public class Data
     /**
      *
      */
-    public void makeMove(int player, Character X, Character Y)
+    public void makeMove(int player, int X, int Y)
     {
-
-
-
         // TODO : MAKE THE GAME SYSTEM
         if (player == 1) {
             this.P1.Play(X, Y);
@@ -114,6 +118,7 @@ public class Data
             this.setTurn(1);
         }
     }
+
 
 
 }

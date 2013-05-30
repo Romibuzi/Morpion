@@ -45,9 +45,13 @@ public class PlayActivity extends Activity
      */
     public void onThisBox(View v)
     {
-        Character X = v.getTag().toString().charAt(0);
-        Character Y = v.getTag().toString().charAt(1);
+        char row = (v.getTag().toString().charAt(0));
+        char col = (v.getTag().toString().charAt(1));
+        int X = Character.getNumericValue(row);
+        int Y = Character.getNumericValue(col);
         int whichPlayer = data.getTurn();
+
+
 
         data.makeMove(whichPlayer, X, Y);
     }

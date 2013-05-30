@@ -5,30 +5,22 @@ import android.util.Log;
 
 public class PlayerOne extends MorpionManager
 {
-
+    int markPlayer1 = 1;
 
     protected void CalculResult()
     {
     }
 
     protected void Play(int X, int Y)
-            //protected void Play(Character X, Character Y)
     {
-        Object o = "X";
+        // check if empty case
+        if (TabPlayer[X][Y] == 0) {
+            TabPlayer[X][Y] = markPlayer1;
+            Log.e("case coché", ""+TabPlayer[X][Y]);
+            // TODO : CHECK WIN
 
-        //MorpionManager test = (MorpionManager) this;
-
-
-        int test2 = super.getX();
-
-        if(TabPlayer[X][Y] == 0)
-        {
-            //TabPlayer[X][Y].equals(o);
-            Log.v("player One", "Player One en Jeu !");
-
+        } else if(TabPlayer[X][Y] != 0) {
+            Log.e("case pas egale a zero", "case déjà prise");
         }
-
-
-        Log.v("player One", "Player One en Jeu !");
     }
 }
