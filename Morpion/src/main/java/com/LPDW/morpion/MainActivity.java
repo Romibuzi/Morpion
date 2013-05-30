@@ -57,12 +57,13 @@ public class MainActivity extends Activity
             // Call the data object and pass the pseudo values into it
             try {
                 Data data = Data.getInstance();
+                // Set scores
                 data.setScoresPlayer1(0);
                 data.setScoresPlayer2(0);
+
                 data.setPseudo1(pseudoOneValue);
                 data.setPseudo2(pseudoTwoValue);
-                // Set turn to play at player1
-                data.setTurn(1);
+
             } catch(Exception e) {
                 Log.v("ERREUR D\'INSTANCIATION", "exception", e);
             }

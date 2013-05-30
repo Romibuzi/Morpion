@@ -1,5 +1,6 @@
 package com.LPDW.morpion;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.app.Activity;
 import android.util.Log;
@@ -23,6 +24,10 @@ public class PlayActivity extends Activity
         this.data = Data.getInstance();
         String pseudo1 = data.getPseudo1();
         String pseudo2 = data.getPseudo2();
+
+        // Set turn to play at player1 & reset number of turn
+        data.setTurn(1);
+        data.setNbTurn(0);
 
         Log.v("pseudo1 :", pseudo1);
         Log.v("pseudo2 :", pseudo2);
@@ -51,9 +56,31 @@ public class PlayActivity extends Activity
         int Y = Character.getNumericValue(col);
         int whichPlayer = data.getTurn();
 
+        boolean hasWin = data.makeMove(whichPlayer, X, Y);
 
+        // If the player has win
+        if(hasWin == true)
+        {
+            // Stop the game & call third activity to display scores
+            Log.v("win", "player"+whichPlayer+" has win");
+            // pass to the play activity
+            Intent intent = new Intent(this, ResultsActivity.class);
+            startActivity(intent);
 
-        data.makeMove(whichPlayer, X, Y);
+        }
+        // else if the player has lose
+        else{
+
+            if(data.getNbTurn() == 9){
+                Log.e("perdu", "partie terminée");
+                // pass to the play activity
+                Intent intent = new Intent(this, ResultsActivity.class);
+                startActivity(intent);
+            }else{
+
+            }
+
+        }
     }
 
 }
