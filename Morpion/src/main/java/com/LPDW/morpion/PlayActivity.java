@@ -8,6 +8,7 @@ import android.view.Menu;
 
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import com.LPDW.morpion.Model.Data;
 import com.LPDW.morpion.View.PlayView;
 
@@ -44,7 +45,7 @@ public class PlayActivity extends Activity
         super.onResume();
         Log.e("onResume", "onResume motherfucker");
 
-        // Get data of the Data object
+        // Reset TabPlayer
         this.data = Data.getInstance();
         data.resetPlayerTab();
     }
@@ -91,11 +92,8 @@ public class PlayActivity extends Activity
             }
             else{
                 // TODO: changer l'image de la case
-
                 ImageView thisImg  = (ImageView)findViewById(v.getId());
-
                 PlayView.changeImageCase(thisImg, whichPlayer);
-
 
             }
         }

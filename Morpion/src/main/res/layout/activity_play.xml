@@ -11,6 +11,7 @@
             android:layout_width="fill_parent"/>
 
     <RelativeLayout
+            android:tag="layoutMorpion"
             android:layout_width="250dp"
             android:layout_height="250dp"
             android:layout_gravity="center">
