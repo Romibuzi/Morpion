@@ -5,6 +5,7 @@ import android.util.AttributeSet;
 import android.view.View;
 import android.widget.ImageView;
 
+import android.widget.RelativeLayout;
 import com.LPDW.morpion.R;
 
 public class PlayView extends View
@@ -29,11 +30,6 @@ public class PlayView extends View
         }
         // set enabled the image
         image.setEnabled(false);
-    }
-
-    public void displayScores()
-    {
-
     }
 
 
