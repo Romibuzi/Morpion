@@ -8,33 +8,41 @@
     android:paddingBottom="@dimen/activity_vertical_margin"
     tools:context=".MainActivity">
 
-
-    <EditText
+    <TextView
             android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="PLAYERS NAMES"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="30dp"
+            android:id="@+id/playerNameTitle"
+            />
+    <EditText
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/pseudo1Text"
-            android:hint="pseudo1"
-            android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="21dp"/>
+            android:hint="Player 1"
+            android:layout_marginTop="40dp"
+            android:imeOptions="actionNext"
+            android:layout_below="@+id/playerNameTitle"/>
 
     <EditText
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/pseudo2Text"
-            android:hint="pseudo2"
-            android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="55dp"/>
+            android:hint="Player 2"
+            android:imeOptions="actionPrevious"
+            android:layout_below="@+id/pseudo1Text"
+            android:layout_marginTop="13dp"/>
 
     <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Jouer"
+            android:text="PLAY"
             android:id="@+id/playButton"
             android:onClick="launchGame"
-            android:layout_marginTop="150dp"
-            android:layout_below="@+id/pseudoText"
+            android:layout_marginTop="94dp"
+            android:layout_below="@+id/pseudo2Text"
             android:layout_centerHorizontal="true"/>
 
 </RelativeLayout>
