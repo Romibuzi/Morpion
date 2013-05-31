@@ -1,9 +1,13 @@
 package com.LPDW.morpion;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.app.Activity;
 import android.util.Log;
 import android.view.Menu;
+import android.view.View;
+import android.widget.Toast;
+
 import com.LPDW.morpion.Model.Data;
 
 public class ResultsActivity extends Activity
@@ -12,9 +16,9 @@ public class ResultsActivity extends Activity
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-        sendToViewResultsData();
-
         setContentView(R.layout.activity_results);
+
+        sendToViewResultsData();
     }
 
 
@@ -29,26 +33,34 @@ public class ResultsActivity extends Activity
     /**
      *
      */
-    public void sendToViewResultsData(){
-
+    public void sendToViewResultsData()
+    {
         // Call the data object and get data
-        try {
-            Data data = Data.getInstance();
+        Data data = Data.getInstance();
 
-            // if anyone has win
-            if(data.getplayerWinner() == 0){
+        int resultPlayer1 = data.getScoresPlayer1();
+        int resultPlayer2 = data.getScoresPlayer2();
 
-
-
-            }
-            // if a player has win
-            else{
-
-
-
-            }
-        } catch(Exception e) {
-            Log.v("ERREUR D\'INSTANCIATION", "exception", e);
+        // if winner exists
+        if (data.getplayerWinner() != 0) {
+            Toast toast = Toast.makeText(this, data.getTheWinnerName()+" has win", Toast.LENGTH_SHORT);
+            toast.show();
+        } // if anyone has win
+        else {
+            Toast toast = Toast.makeText(this, "Nobody has win !", Toast.LENGTH_SHORT);
+            toast.show();
         }
+    }
+
+    /**
+     * Function used to pass to play View
+     * @param v : View
+     * @return void
+     */
+    public void RestartGame(View v)
+    {
+        // pass to the play activity
+        Intent intent = new Intent(this, PlayActivity.class);
+        startActivity(intent);
     }
 }

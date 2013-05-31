@@ -99,7 +99,7 @@ public class Data
     /**
      * Function which return the Data instance if it exists or new Data object if it doesn't exists (singleton)
      *
-     * @return INSTANCE
+     * @return INSTANCE : Data Object
      */
     public static Data getInstance()
     {
@@ -124,9 +124,10 @@ public class Data
         this.setNbTurn(1);
 
         if (player == 1) {
-            // make the play for player one, if he make a win move => return result
+            // make the play for player one, if he make a win move => return result and set playerWinner for playerOne
             if (this.P1.Play(X, Y)) {
                 this.setScoresPlayer1(1);
+                this.setplayerWinner(1);
                 return true;
             } else {
                 // set turn to Player 2
@@ -134,8 +135,10 @@ public class Data
                 return false;
             }
         } else if (player == 2) {
+            // same as player one
             if (this.P2.Play(X, Y)) {
                 this.setScoresPlayer2(1);
+                this.setplayerWinner(2);
                 return true;
             } else {
                 // set turn to Player 1
@@ -154,6 +157,18 @@ public class Data
         this.MM.resetPlayerTab();
     }
 
-
+    public String getTheWinnerName()
+    {
+        switch(this.getplayerWinner()) {
+            case(0):
+                return null;
+            case(1):
+                return this.getPseudo1();
+            case(2):
+                return this.getPseudo2();
+            default:
+                return null;
+        }
+    }
 
 }

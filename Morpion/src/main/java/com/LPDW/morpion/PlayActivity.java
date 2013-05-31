@@ -22,7 +22,7 @@ public class PlayActivity extends Activity
         setContentView(R.layout.activity_play);
 
         // Get data of the Data object
-        this.data = Data.getInstance();
+        data = Data.getInstance();
         String pseudo1 = data.getPseudo1();
         String pseudo2 = data.getPseudo2();
 
@@ -45,7 +45,7 @@ public class PlayActivity extends Activity
         Log.e("onResume", "onResume motherfucker");
 
         // Get data of the Data object
-        this.data = Data.getInstance();
+        data = Data.getInstance();
         data.resetPlayerTab();
     }
 
@@ -61,7 +61,7 @@ public class PlayActivity extends Activity
      *
      * Function called when a block of the Morpion is clicked
      *
-     * @param v
+     * @param v : View
      */
     public void onThisBox(View v)
     {
@@ -74,34 +74,32 @@ public class PlayActivity extends Activity
         boolean hasWin = data.makeMove(whichPlayer, X, Y);
 
         // If the player has win
-        if(hasWin == true)
-        {
+        if (hasWin == true) {
             // Stop the game & call third activity to display scores
             Log.v("win", "player"+whichPlayer+" has win");
             // pass to the results activity
             goToResultsActivity();
         }
         // else if the player has lose
-        else{
-            if(data.getNbTurn() == 9){
+        else {
+            if (data.getNbTurn() == 9) {
                 // Stop the game & call third activity to display "AUNCUN GAGNANT !"
                 Log.e("perdu", "partie terminée");
                 // pass to the results activity
                 goToResultsActivity();
-            }
-            else{
-                // TODO: changer l'image de la case
-
+            } else {
+                // get the ImageView tapped, then change the image background by calling changeImageCase() only if the case was empty
                 ImageView thisImg  = (ImageView)findViewById(v.getId());
-
                 PlayView.changeImageCase(thisImg, whichPlayer);
-
-
             }
         }
     }
 
-    private void goToResultsActivity(){
+    /**
+     * Function used to pass to the result activity
+     */
+    private void goToResultsActivity()
+    {
         // pass to the results activity
         Intent intent = new Intent(this, ResultsActivity.class);
         startActivity(intent);

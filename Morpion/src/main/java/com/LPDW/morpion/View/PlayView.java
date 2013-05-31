@@ -14,6 +14,12 @@ public class PlayView extends View
         super(context);
     }
 
+    /**
+     * Function to set the round or cross image to the ImageView element
+     *
+     * @param image : the ImageView element
+     * @param Marker : the marker corresponding to the player id
+     */
     public static void changeImageCase(ImageView image, int Marker)
     {
         if (Marker == 1) {
@@ -21,6 +27,8 @@ public class PlayView extends View
         } else if (Marker == 2) {
             image.setImageResource(R.drawable.rond);
         }
+        // set enabled the image
+        image.setEnabled(false);
     }
 
     public void displayScores()

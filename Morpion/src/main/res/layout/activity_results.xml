@@ -10,6 +10,7 @@
             android:layout_height="60dp"
             android:text="Rejouer"
             android:id="@+id/RestartGame"
+            android:onClick="RestartGame"
             android:layout_centerInParent="true"
             android:gravity="center_vertical"/>
 </RelativeLayout>
