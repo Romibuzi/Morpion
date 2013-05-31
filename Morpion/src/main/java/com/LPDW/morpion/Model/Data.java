@@ -159,14 +159,6 @@ public class Data
     }
 
     /**
-     * Function used to reset TabPlayer
-     */
-    public void resetPlayerTab()
-    {
-        this.MM.resetPlayerTab();
-    }
-
-    /**
      * Function used to recup the Name of the Winner
      *
      * @return String : name of the player if it exists
