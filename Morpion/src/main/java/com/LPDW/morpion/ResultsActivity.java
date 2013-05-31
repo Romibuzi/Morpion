@@ -6,6 +6,7 @@ import android.app.Activity;
 import android.util.Log;
 import android.view.Menu;
 import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.LPDW.morpion.Model.Data;
@@ -38,8 +39,16 @@ public class ResultsActivity extends Activity
         // Call the data object and get data
         Data data = Data.getInstance();
 
+        // recup scores, then fill results TextView in the view
+        String namePlayer1 = data.getPseudo1();
+        String namePlayer2 = data.getPseudo2();
         int resultPlayer1 = data.getScoresPlayer1();
         int resultPlayer2 = data.getScoresPlayer2();
+        TextView ScorePlayer1 = (TextView)findViewById(R.id.player1Results);
+        TextView ScorePlayer2 = (TextView)findViewById(R.id.player2Results);
+
+        ScorePlayer1.setText(namePlayer1 + " : " + resultPlayer1);
+        ScorePlayer2.setText(namePlayer2 + " : " + resultPlayer2);
 
         // if winner exists
         if (data.getplayerWinner() != 0) {
@@ -50,6 +59,7 @@ public class ResultsActivity extends Activity
             Toast toast = Toast.makeText(this, "Nobody has win !", Toast.LENGTH_SHORT);
             toast.show();
         }
+
     }
 
     /**

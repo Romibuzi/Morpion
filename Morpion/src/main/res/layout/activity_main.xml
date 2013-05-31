@@ -47,7 +47,7 @@
         <RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="OnePlayer"
+                android:text="Un Joueur"
                 android:id="@+id/radioButton"
                 android:checked="false"
                 android:layout_marginTop="27dp"
@@ -57,7 +57,7 @@
         <RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Two Player"
+                android:text="Deux Joueurs"
                 android:id="@+id/radioButton2"
                 android:checked="true"
                 android:layout_below="@+id/radioButton"

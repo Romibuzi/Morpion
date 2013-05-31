@@ -13,4 +13,32 @@
             android:onClick="RestartGame"
             android:layout_centerInParent="true"
             android:gravity="center_vertical"/>
+
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Score Joueur 1"
+            android:id="@+id/player1Results"
+            android:layout_marginBottom="27dp"
+            android:layout_above="@+id/RestartGame"
+            android:layout_toLeftOf="@+id/RestartGame"/>
+
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Score Joueur 2"
+            android:id="@+id/player2Results"
+            android:layout_alignTop="@+id/player1Results"
+            android:layout_toRightOf="@+id/RestartGame"/>
+
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Résultats"
+            android:id="@+id/textView"
+            android:layout_above="@+id/player2Results"
+            android:layout_toRightOf="@+id/player1Results"
+            android:layout_marginBottom="19dp"/>
+
 </RelativeLayout>
