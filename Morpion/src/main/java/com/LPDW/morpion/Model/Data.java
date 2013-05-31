@@ -86,6 +86,11 @@ public class Data
         this.nbTurn += nbTurn;
     }
 
+    public void initNbTurn()
+    {
+        this.nbTurn = 0;
+    }
+
     /**
      * Private Constructor (for singleton pattern)
      */
@@ -188,7 +193,7 @@ public class Data
     {
         // Set turn to play at player1 & reset number of turn
         this.setTurn(1);
-        this.setNbTurn(0);
+        this.initNbTurn();
 
         // reset player winner
         this.setplayerWinner(0);
