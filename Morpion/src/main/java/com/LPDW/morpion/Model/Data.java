@@ -171,4 +171,19 @@ public class Data
         }
     }
 
+    public void resetAllPlayViewData()
+    {
+
+        // Set turn to play at player1 & reset number of turn
+        this.setTurn(1);
+        this.setNbTurn(0);
+
+        // reset player winner
+        this.setplayerWinner(0);
+
+        // reset TabPlayer
+        this.MM.resetPlayerTab();
+
+    }
+
 }

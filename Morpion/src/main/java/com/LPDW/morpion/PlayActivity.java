@@ -26,12 +26,8 @@ public class PlayActivity extends Activity
         String pseudo1 = data.getPseudo1();
         String pseudo2 = data.getPseudo2();
 
-        // Set turn to play at player1 & reset number of turn
-        data.setTurn(1);
-        data.setNbTurn(0);
-
-        // reset player winner
-        data.setplayerWinner(0);
+        // Set All
+        data.resetAllPlayViewData();
 
         Log.v("pseudo1 :", pseudo1);
         Log.v("pseudo2 :", pseudo2);
@@ -46,7 +42,8 @@ public class PlayActivity extends Activity
 
         // Get data of the Data object
         data = Data.getInstance();
-        data.resetPlayerTab();
+        // Reset All
+        data.resetAllPlayViewData();
     }
 
     @Override
