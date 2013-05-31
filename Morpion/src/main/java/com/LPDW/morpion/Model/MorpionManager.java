@@ -39,7 +39,7 @@ public class MorpionManager
     }
 
     /**
-     * Function used to check if the player has win by checking differents cases of winning
+     * Function used to check if the player has win by checking different cases of winning
      *
      * @return bool
      */
