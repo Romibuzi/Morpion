@@ -6,14 +6,20 @@
               android:layout_width="match_parent"
               android:layout_height="match_parent">
 
-    <com.LPDW.morpion.View.PlayView
-            android:layout_height="100dp"
-            android:layout_width="fill_parent"/>
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Players"
+            android:id="@+id/playersInGame"
+            android:layout_marginTop="70dp"
+            android:layout_gravity="center"/>
 
     <RelativeLayout
             android:tag="layoutMorpion"
             android:layout_width="250dp"
             android:layout_height="250dp"
+            android:layout_marginTop="30dp"
             android:layout_gravity="center">
 
         <ImageView

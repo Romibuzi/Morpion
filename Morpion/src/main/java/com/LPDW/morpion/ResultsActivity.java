@@ -3,7 +3,6 @@ package com.LPDW.morpion;
 import android.content.Intent;
 import android.os.Bundle;
 import android.app.Activity;
-import android.util.Log;
 import android.view.Menu;
 import android.view.View;
 import android.widget.TextView;
@@ -19,7 +18,7 @@ public class ResultsActivity extends Activity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_results);
 
-        sendToViewResultsData();
+        sendResultsDataToViewData();
     }
 
     @Override
@@ -31,9 +30,9 @@ public class ResultsActivity extends Activity
     }
 
     /**
-     *
+     * Function used to send results at view
      */
-    public void sendToViewResultsData()
+    public void sendResultsDataToViewData()
     {
         // Call the data object and get data
         Data data = Data.getInstance();
@@ -47,17 +46,20 @@ public class ResultsActivity extends Activity
 
         TextView ScorePlayer1 = (TextView)findViewById(R.id.player1Results);
         TextView ScorePlayer2 = (TextView)findViewById(R.id.player2Results);
+        TextView winnerText = (TextView)findViewById(R.id.winnerText);
 
         ScorePlayer1.setText(namePlayer1 + " : " + resultPlayer1);
         ScorePlayer2.setText(namePlayer2 + " : " + resultPlayer2);
 
         // if winner exists
         if (data.getplayerWinner() != 0) {
-            Toast toast = Toast.makeText(this, data.getTheWinnerName()+" has win", Toast.LENGTH_SHORT);
+            winnerText.setText("Good game " + data.getTheWinnerName() + " !");
+            Toast toast = Toast.makeText(this, data.getTheWinnerName()+" HAS WIN", Toast.LENGTH_LONG);
             toast.show();
         } // if nobody has win
         else {
-            Toast toast = Toast.makeText(this, "Nobody has win !", Toast.LENGTH_SHORT);
+            winnerText.setText("Aucun gagnant cette fois!");
+            Toast toast = Toast.makeText(this, "NOBODY HAS WIN !", Toast.LENGTH_LONG);
             toast.show();
         }
     }

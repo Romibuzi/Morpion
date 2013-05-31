@@ -8,12 +8,15 @@ import android.view.Menu;
 
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.TextView;
+
 import com.LPDW.morpion.Model.Data;
 import com.LPDW.morpion.View.PlayView;
 
 public class PlayActivity extends Activity
 {
     Data data;
+    TextView playersInGame;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -26,6 +29,10 @@ public class PlayActivity extends Activity
         String pseudo1 = data.getPseudo1();
         String pseudo2 = data.getPseudo2();
 
+        // Display them into the TextView
+        playersInGame = (TextView) findViewById(R.id.playersInGame);
+        playersInGame.setText(pseudo1 + " VS " + pseudo2);
+
         // Reset All
         data.resetAllPlayViewData();
 
@@ -33,17 +40,19 @@ public class PlayActivity extends Activity
         Log.v("pseudo2 :", pseudo2);
     }
 
-
     @Override
     protected void onResume()
     {
         super.onResume();
-        Log.e("onResume", "onResume motherfucker");
 
         // Get data of the Data object
         data = Data.getInstance();
         // Reset All
         data.resetAllPlayViewData();
+
+        // display the two players name again in the textview
+        playersInGame = (TextView) findViewById(R.id.playersInGame);
+        playersInGame.setText(data.getPseudo1() + " vs " + data.getPseudo2());
     }
 
     @Override
