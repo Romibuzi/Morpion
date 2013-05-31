@@ -70,10 +70,6 @@ public class MainActivity extends Activity
             } catch(Exception e) {
                 Log.v("ERREUR D\'INSTANCIATION", "exception", e);
             }
-
-
         }
-
     }
-    
 }

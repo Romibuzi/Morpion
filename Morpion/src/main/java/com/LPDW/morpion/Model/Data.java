@@ -2,20 +2,20 @@ package com.LPDW.morpion.Model;
 
 public class Data
 {
-    int playerWinner;
+    // properties
+    MorpionManager MM;
     PlayerOne P1;
     PlayerTwo P2;
-    MorpionManager MM;
     String pseudo1;
     String pseudo2;
+    int playerWinner;
     int scoresPlayer1;
     int scoresPlayer2;
     int turn;
     int nbTurn;
-
-    // Data Object
     private static Data INSTANCE = null;
 
+    // GETTER - SETTERS
     public int getplayerWinner()
     {
         return playerWinner;
@@ -76,17 +76,18 @@ public class Data
         this.turn = turn;
     }
 
-    public int getNbTurn() {
+    public int getNbTurn()
+    {
         return nbTurn;
     }
 
-    public void setNbTurn(int nbTurn) {
+    public void setNbTurn(int nbTurn)
+    {
         this.nbTurn += nbTurn;
     }
 
-
     /**
-     * Private Constructor (singleton)
+     * Private Constructor (for singleton pattern)
      */
     private Data()
     {
@@ -97,7 +98,7 @@ public class Data
     }
 
     /**
-     * Function which return the Data instance if it exists or new Data object if it doesn't exists (singleton)
+     * Function which return the Data instance if it exists or new Data object if it doesn't exists (singleton pattern)
      *
      * @return INSTANCE : Data Object
      */
@@ -106,6 +107,7 @@ public class Data
         if (INSTANCE == null) {
             INSTANCE = new Data();
         }
+
         return INSTANCE;
     }
 
@@ -113,14 +115,15 @@ public class Data
     /**
      * Function which call the different players, then make them play and check if they have win
      *
-     * @param player
-     * @param X
-     * @param Y
+     * @param player : int identifier of the player
+     * @param X : int position in row
+     * @param Y : int position in col
      *
      * @return bool win or false
      */
     public boolean makeMove(int player, int X, int Y)
     {
+        // increments the number of turn
         this.setNbTurn(1);
 
         if (player == 1) {
@@ -146,17 +149,24 @@ public class Data
                 return false;
             }
         }
+
         return false;
     }
 
     /**
-     * Function to reset TabPlayer
+     * Function used to reset TabPlayer
      */
     public void resetPlayerTab()
     {
         this.MM.resetPlayerTab();
     }
 
+    /**
+     * Function used to recup the Name of the Winner
+     *
+     * @return String : name of the player if it exists
+     * @return null if no Winner
+     */
     public String getTheWinnerName()
     {
         switch(this.getplayerWinner()) {
@@ -171,9 +181,11 @@ public class Data
         }
     }
 
+    /**
+     * Function used to reset all the data when a new game is launched
+     */
     public void resetAllPlayViewData()
     {
-
         // Set turn to play at player1 & reset number of turn
         this.setTurn(1);
         this.setNbTurn(0);
@@ -183,7 +195,6 @@ public class Data
 
         // reset TabPlayer
         this.MM.resetPlayerTab();
-
     }
 
 }

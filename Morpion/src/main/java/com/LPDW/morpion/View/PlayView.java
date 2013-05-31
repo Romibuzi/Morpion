@@ -5,7 +5,6 @@ import android.util.AttributeSet;
 import android.view.View;
 import android.widget.ImageView;
 
-import android.widget.RelativeLayout;
 import com.LPDW.morpion.R;
 
 public class PlayView extends View
@@ -28,7 +27,7 @@ public class PlayView extends View
         } else if (Marker == 2) {
             image.setImageResource(R.drawable.rond);
         }
-        // set enabled the image
+        // set disabled the image (because already tapped)
         image.setEnabled(false);
     }
 

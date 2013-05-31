@@ -22,7 +22,6 @@ public class ResultsActivity extends Activity
         sendToViewResultsData();
     }
 
-
     @Override
     public boolean onCreateOptionsMenu(Menu menu)
     {
@@ -42,8 +41,10 @@ public class ResultsActivity extends Activity
         // recup scores, then fill results TextView in the view
         String namePlayer1 = data.getPseudo1();
         String namePlayer2 = data.getPseudo2();
+
         int resultPlayer1 = data.getScoresPlayer1();
         int resultPlayer2 = data.getScoresPlayer2();
+
         TextView ScorePlayer1 = (TextView)findViewById(R.id.player1Results);
         TextView ScorePlayer2 = (TextView)findViewById(R.id.player2Results);
 
@@ -54,7 +55,7 @@ public class ResultsActivity extends Activity
         if (data.getplayerWinner() != 0) {
             Toast toast = Toast.makeText(this, data.getTheWinnerName()+" has win", Toast.LENGTH_SHORT);
             toast.show();
-        } // if anyone has win
+        } // if nobody has win
         else {
             Toast toast = Toast.makeText(this, "Nobody has win !", Toast.LENGTH_SHORT);
             toast.show();

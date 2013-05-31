@@ -26,7 +26,7 @@ public class PlayActivity extends Activity
         String pseudo1 = data.getPseudo1();
         String pseudo2 = data.getPseudo2();
 
-        // Set All
+        // Reset All
         data.resetAllPlayViewData();
 
         Log.v("pseudo1 :", pseudo1);
@@ -62,33 +62,24 @@ public class PlayActivity extends Activity
      */
     public void onThisBox(View v)
     {
+        // recup the row, the col and the player who tapped on the case
         char row = (v.getTag().toString().charAt(0));
         char col = (v.getTag().toString().charAt(1));
         int X = Character.getNumericValue(row);
         int Y = Character.getNumericValue(col);
         int whichPlayer = data.getTurn();
 
+        // makeMove with differents informations
         boolean hasWin = data.makeMove(whichPlayer, X, Y);
 
-        // If the player has win
-        if (hasWin == true) {
-            // Stop the game & call third activity to display scores
-            Log.v("win", "player"+whichPlayer+" has win");
-            // pass to the results activity
+        // if one of player has win or nobody has win (all cases are filled without winner)
+        if (hasWin || data.getNbTurn() == 9) {
+            // stop the game & call third activity to display scores
             goToResultsActivity();
-        }
-        // else if the player has lose
-        else {
-            if (data.getNbTurn() == 9) {
-                // Stop the game & call third activity to display "AUNCUN GAGNANT !"
-                Log.e("perdu", "partie terminée");
-                // pass to the results activity
-                goToResultsActivity();
-            } else {
-                // get the ImageView tapped, then change the image background by calling changeImageCase() only if the case was empty
-                ImageView thisImg  = (ImageView)findViewById(v.getId());
-                PlayView.changeImageCase(thisImg, whichPlayer);
-            }
+        } else {
+            // get the ImageView tapped, then change the image background by calling changeImageCase() only if the case was empty
+            ImageView thisImg  = (ImageView)findViewById(v.getId());
+            PlayView.changeImageCase(thisImg, whichPlayer);
         }
     }
 
@@ -101,5 +92,4 @@ public class PlayActivity extends Activity
         Intent intent = new Intent(this, ResultsActivity.class);
         startActivity(intent);
     }
-
 }
