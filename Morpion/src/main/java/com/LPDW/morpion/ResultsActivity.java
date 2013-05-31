@@ -59,7 +59,6 @@ public class ResultsActivity extends Activity
             Toast toast = Toast.makeText(this, "Nobody has win !", Toast.LENGTH_SHORT);
             toast.show();
         }
-
     }
 
     /**
