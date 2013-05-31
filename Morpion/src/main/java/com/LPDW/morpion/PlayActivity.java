@@ -3,7 +3,6 @@ package com.LPDW.morpion;
 import android.content.Intent;
 import android.os.Bundle;
 import android.app.Activity;
-import android.util.Log;
 import android.view.Menu;
 
 import android.view.View;
@@ -35,9 +34,6 @@ public class PlayActivity extends Activity
 
         // Reset All
         data.resetAllPlayViewData();
-
-        Log.v("pseudo1 :", pseudo1);
-        Log.v("pseudo2 :", pseudo2);
     }
 
     @Override

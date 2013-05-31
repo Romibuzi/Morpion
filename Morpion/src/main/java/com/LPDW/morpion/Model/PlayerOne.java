@@ -1,8 +1,5 @@
 package com.LPDW.morpion.Model;
 
-
-import android.util.Log;
-
 public class PlayerOne extends MorpionManager
 {
     // Properties

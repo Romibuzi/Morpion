@@ -5,21 +5,42 @@
 
               android:layout_width="match_parent"
               android:layout_height="match_parent">
-
-    <TextView
+    <RelativeLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="Players"
-            android:id="@+id/playersInGame"
-            android:layout_marginTop="70dp"
-            android:layout_gravity="center"/>
+            android:layout_marginTop="30dp"
+            android:layout_gravity="center">
+
+        <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:id="@+id/imageView"
+                android:src="@drawable/croix"/>
+
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:layout_centerInParent="true"
+                android:text="Players"
+                android:id="@+id/playersInGame"
+                android:layout_gravity="center"/>
+
+        <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/imageView"
+                android:layout_alignParentRight="true"
+                android:src="@drawable/rond"/>
+
+    </RelativeLayout>
 
     <RelativeLayout
             android:tag="layoutMorpion"
             android:layout_width="250dp"
             android:layout_height="250dp"
-            android:layout_marginTop="30dp"
+            android:layout_marginTop="50dp"
             android:layout_gravity="center">
 
         <ImageView

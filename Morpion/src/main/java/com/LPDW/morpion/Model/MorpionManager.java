@@ -1,7 +1,5 @@
 package com.LPDW.morpion.Model;
 
-import android.util.Log;
-
 public class MorpionManager
 {
     // Properties
@@ -21,7 +19,6 @@ public class MorpionManager
      */
     private void createTabPlayer()
     {
-        Log.v("methode creation Table", "Création du tableau TabPlayer");
         TabPlayer = new int[3][3];
         resetPlayerTab();
     }

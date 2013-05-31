@@ -5,37 +5,20 @@
               android:layout_width="match_parent"
               android:layout_height="match_parent">
 
-    <Button
-            android:layout_width="90dp"
-            android:layout_height="60dp"
-            android:text="Rejouer"
-            android:id="@+id/RestartGame"
-            android:onClick="RestartGame"
-            android:layout_centerInParent="true"
-            android:gravity="center_vertical"/>
-
     <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Score Joueur 1"
-            android:id="@+id/player1Results"
-            android:layout_marginBottom="27dp"
-            android:layout_above="@+id/RestartGame"
-            android:layout_toLeftOf="@+id/RestartGame"/>
-
-    <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Score Joueur 2"
-            android:id="@+id/player2Results"
-            android:layout_alignTop="@+id/player1Results"
-            android:layout_toRightOf="@+id/RestartGame"/>
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text=""
+            android:layout_marginTop="60dp"
+            android:layout_centerHorizontal="true"
+            android:id="@+id/winnerText"/>
 
     <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="Résultats"
+            android:text="Results"
             android:id="@+id/textView"
             android:layout_above="@+id/player2Results"
             android:layout_toRightOf="@+id/player1Results"
@@ -44,21 +27,28 @@
     <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:id="@+id/textView2"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentLeft="true"
-            android:layout_marginTop="25dp"
-            android:layout_alignParentRight="true"/>
+            android:text="Score Player 1"
+            android:id="@+id/player1Results"
+            android:layout_marginBottom="27dp"
+            android:layout_above="@+id/RestartGame"
+            android:layout_toLeftOf="@+id/RestartGame"/>
 
     <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text=""
-            android:layout_marginTop="60dp"
-            android:layout_marginLeft="75dp"
-            android:id="@+id/winnerText"
-            android:layout_marginRight="11dp"/>
+            android:text="Score Player 2"
+            android:id="@+id/player2Results"
+            android:layout_alignTop="@+id/player1Results"
+            android:layout_toRightOf="@+id/RestartGame"/>
+
+    <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="REPLAY"
+            android:id="@+id/RestartGame"
+            android:onClick="RestartGame"
+            android:layout_centerInParent="true"
+            android:layout_centerHorizontal="true"
+            android:gravity="center_vertical"/>
 
 </RelativeLayout>

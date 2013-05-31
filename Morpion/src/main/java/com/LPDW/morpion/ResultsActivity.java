@@ -58,7 +58,7 @@ public class ResultsActivity extends Activity
             toast.show();
         } // if nobody has win
         else {
-            winnerText.setText("Aucun gagnant cette fois!");
+            winnerText.setText("Oh Shit !");
             Toast toast = Toast.makeText(this, "NOBODY HAS WIN !", Toast.LENGTH_LONG);
             toast.show();
         }
