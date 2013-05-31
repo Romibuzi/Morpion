@@ -13,7 +13,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/pseudo1Text"
-            android:text="pseudo1"
+            android:hint="pseudo1"
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="21dp"/>
@@ -22,7 +22,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/pseudo2Text"
-            android:text="pseudo2"
+            android:hint="pseudo2"
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="55dp"/>
@@ -36,32 +36,5 @@
             android:layout_marginTop="150dp"
             android:layout_below="@+id/pseudoText"
             android:layout_centerHorizontal="true"/>
-
-    <RadioGroup
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/NumberPlayers"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="70dp">
-
-        <RadioButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Un Joueur"
-                android:id="@+id/radioButton"
-                android:checked="false"
-                android:layout_marginTop="27dp"
-                android:layout_below="@+id/pseudoText"
-                android:layout_centerHorizontal="true"/>
-
-        <RadioButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Deux Joueurs"
-                android:id="@+id/radioButton2"
-                android:checked="true"
-                android:layout_below="@+id/radioButton"
-                android:layout_centerHorizontal="true"/>
-    </RadioGroup>
 
 </RelativeLayout>

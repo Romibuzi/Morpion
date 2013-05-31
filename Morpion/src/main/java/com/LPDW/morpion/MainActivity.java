@@ -45,11 +45,10 @@ public class MainActivity extends Activity
         String pseudoTwoValue = pseudoTwo.getText().toString();
 
         // If one of two pseudos are null or equals at "pseudo", render a toast
-        if (//
-            //pseudoTwoValue.trim().length() == 0 ||
-            //pseudoOneValue.equalsIgnoreCase("pseudo1") ||
-            //pseudoTwoValue.equalsIgnoreCase("pseudo2"
-            pseudoOneValue.trim().length() == 0 ) {
+        if (pseudoTwoValue.trim().length() == 0 ||
+            pseudoOneValue.trim().length() == 0 ||
+            pseudoOneValue.equalsIgnoreCase("pseudo1") ||
+            pseudoTwoValue.equalsIgnoreCase("pseudo2")) {
 
             Toast toast = Toast.makeText(this, "Veuillez rentrer des pseudos valides!", Toast.LENGTH_SHORT);
             toast.show();
